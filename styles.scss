@@ -89,22 +89,140 @@ body {
   }
 }
 
-// Fade In Animation
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
+// #region Upload Section
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  height: 150px;
+  border: 3px dashed lightblue;
+  border-radius: 1rem;
+  margin: 1rem auto 0;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  text-align: center;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* hide the default file input */
+.upload-section input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  font-size: 1rem;
+  color: lightblue;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.upload-section:hover {
+  background-color: rgba(14, 74, 94, 0.533);
+}
+
+#output {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem auto 0;
+  max-width: 350px;
+  overflow: scroll;
+}
+
+.result-block {
+  height: 200px;
+  min-width: 250px;
+  overflow: scroll;
+  padding: 1rem;
+  background-color: #2d4577ab;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+
+  h2 {
+    font-size: 1rem;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    margin: 0;
+    color: lightblue;
   }
-  to {
-    opacity: 1;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    font-size: 0.9rem;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 500;
+    margin: 0.5rem;
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        color: lightblue;
+        text-decoration: underline;
+      }
+    }
   }
 }
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.downloadCsvBtn {
+  display: none;
+  background-color: #176056;
+  border-radius: 10px;
+  transition: 0.1s linear;
+  border: none;
+  padding: 0.5rem 1rem;
+
+  p {
+    font-size: 0.9rem;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: 0;
+    color: white;
+  }
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(130%);
+  }
+}
+// #endregion
 
 // #region Loading Animation
+.loader-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 210px;
+}
+
+.loader-label {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .loader {
   width: 90px;
   height: 14px;
@@ -141,3 +259,18 @@ body {
   100%  {transform:translate(200%)}
 }
 // #endregion
+
+// Fade In Animation
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

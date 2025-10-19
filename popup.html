@@ -22,10 +22,31 @@
       <div class="sub-title">
         <img src="/images/instagram-icon.svg" alt="instagram-icon">
         <p>Instagram Addition</p>
-        <button id="resetData">Reset Data</button>
+        <button id="resetBtn">Reset Data</button>
       </div>
     </div>
 
+    <span id="mainError" style="color: rgb(255, 59, 59); font-size: 1rem; letter-spacing: 0; margin-bottom: 1rem; text-align: center; display: block; margin-top: 0.5rem; padding: 0 1rem;"></span>
+
+    <div class="loader-container" id="loader">
+      <div class="loader"></div>
+      <div class="loader-label">Working on it...</div>
+    </div>
+
+    <div class="upload-section" id="uploadSection">
+      <input type="file" id="zipInput" accept=".zip" />
+      <label class="upload-label">Drag & Drop your ZIP file here<br>or click to browse</label>
+    </div>
+
+    <div id="output"></div>
+
+    <div class="actions">
+      <button class="downloadCsvBtn" id="downloadCsvBtn">
+        <p>Download CSV</p>
+      </button>
+    </div>
+
+    <script src="lib/jszip.min.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>
