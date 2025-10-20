@@ -134,7 +134,6 @@ body {
 .result-block {
   height: 200px;
   min-width: 250px;
-  overflow: scroll;
   padding: 1rem;
   background-color: #2d4577ab;
   border-radius: 15px;
@@ -152,6 +151,9 @@ body {
   ul {
     list-style-type: none;
     padding: 0;
+    overflow: scroll;
+    height: 175px;
+    margin-top: 0.5rem;
   }
 
   li {

@@ -127,7 +127,6 @@ body {
 .result-block {
   height: 200px;
   min-width: 250px;
-  overflow: scroll;
   padding: 1rem;
   background-color: rgba(45, 69, 119, 0.6705882353);
   border-radius: 15px;
@@ -144,6 +143,9 @@ body {
 .result-block ul {
   list-style-type: none;
   padding: 0;
+  overflow: scroll;
+  height: 175px;
+  margin-top: 0.5rem;
 }
 .result-block li {
   font-size: 0.9rem;
