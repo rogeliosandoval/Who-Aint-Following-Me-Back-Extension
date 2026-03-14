@@ -95,6 +95,7 @@ async function handleFile(event) {
     setTimeout(() => {
       renderResults(notFollowingBack, youDontFollowBack)
       loader.style.display = 'none'
+      chrome.storage.local.set({ notFollowingBack, youDontFollowBack })
     }, 1800)
   } catch(error) {
     mainError.innerHTML = error
@@ -154,8 +155,16 @@ function renderResults(notFollowingBack, youDontFollowBack) {
     output.innerHTML = ''
     uploadSection.style.display = 'flex'
     document.getElementById('downloadCsvBtn').style.display = 'none'
+    chrome.storage.local.remove(['notFollowingBack', 'youDontFollowBack'])
   })
 }
+
+chrome.storage.local.get(['notFollowingBack', 'youDontFollowBack'], (result) => {
+  if (result.notFollowingBack && result.youDontFollowBack) {
+    uploadSection.style.display = 'none'
+    renderResults(result.notFollowingBack, result.youDontFollowBack)
+  }
+})
 
 function downloadCSV(notFollowingBack, youDontFollowBack) {
   let csvContent = "data:text/csv;charset=utf-8,"
